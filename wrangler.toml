@@ -1,0 +1,29 @@
+# Cloudflare Worker Configuration
+# Rename this file from wrangler.toml.example to wrangler.toml and customize
+
+name = "bot-blocker"
+main = "worker.js"
+compatibility_date = "2025-11-20"
+compatibility_flags = ["nodejs_compat"]
+
+# Enable observability (logs, metrics)
+observability = true
+
+# Account ID (get from Cloudflare dashboard)
+# account_id = "your-account-id-here"
+
+# Routes - configure in Cloudflare dashboard instead
+# Or uncomment to configure here:
+# routes = [
+#   { pattern = "yourdomain.com/*", zone_name = "yourdomain.com" },
+#   { pattern = "www.yourdomain.com/*", zone_name = "yourdomain.com" }
+# ]
+
+# Environment variables (if needed)
+# [vars]
+# ENVIRONMENT = "production"
+
+# For development
+# [env.dev]
+# name = "bot-blocker-dev"
+# vars = { ENVIRONMENT = "development" }
