@@ -115,5 +115,5 @@ wrangler deploy
 ## Need Help?
 
 - Check the [main README](../README.md)
-- Open an [issue](https://github.com/yourusername/cloudflare-bot-blocker/issues)
-- Start a [discussion](https://github.com/yourusername/cloudflare-bot-blocker/discussions)
+- Open an [issue](https://github.com/AbdusM/cloudflare-bot-blocker/issues)
+- Start a [discussion](https://github.com/AbdusM/cloudflare-bot-blocker/discussions)

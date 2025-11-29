@@ -40,7 +40,7 @@ npm install -g wrangler
 ### 3. Clone and Configure
 
 ```bash
-git clone https://github.com/yourusername/cloudflare-bot-blocker.git
+git clone https://github.com/AbdusM/cloudflare-bot-blocker.git
 cd cloudflare-bot-blocker
 ```
 
@@ -292,8 +292,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Support
 
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/cloudflare-bot-blocker/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/yourusername/cloudflare-bot-blocker/discussions)
+- 🐛 Issues: [GitHub Issues](https://github.com/AbdusM/cloudflare-bot-blocker/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/AbdusM/cloudflare-bot-blocker/discussions)
 
 ## Acknowledgments
 

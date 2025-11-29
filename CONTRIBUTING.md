@@ -8,7 +8,7 @@ Thanks for your interest in contributing! This project helps thousands of develo
 
 Found a bug or have a feature request?
 
-1. Check [existing issues](https://github.com/yourusername/cloudflare-bot-blocker/issues) first
+1. Check [existing issues](https://github.com/AbdusM/cloudflare-bot-blocker/issues) first
 2. Create a new issue with:
    - Clear description
    - Steps to reproduce (for bugs)
@@ -168,7 +168,7 @@ We'll review PRs within a few days. Be patient!
 
 ## Questions?
 
-- Open a [Discussion](https://github.com/yourusername/cloudflare-bot-blocker/discussions)
+- Open a [Discussion](https://github.com/AbdusM/cloudflare-bot-blocker/discussions)
 - Comment on related issues
 - Tag maintainers if urgent
 
