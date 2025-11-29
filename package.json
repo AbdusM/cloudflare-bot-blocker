@@ -1,0 +1,36 @@
+{
+  "name": "cloudflare-bot-blocker",
+  "version": "1.0.0",
+  "description": "Multi-layer Cloudflare Worker for blocking bot traffic (China, Tencent, AI scrapers)",
+  "main": "worker.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "tail": "wrangler tail"
+  },
+  "keywords": [
+    "cloudflare",
+    "cloudflare-workers",
+    "bot-protection",
+    "web-security",
+    "ddos-protection",
+    "ai-scrapers",
+    "analytics",
+    "rate-limiting",
+    "geo-blocking",
+    "asn-blocking"
+  ],
+  "author": "Abdus Muwwakkil",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AbdusM/cloudflare-bot-blocker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AbdusM/cloudflare-bot-blocker/issues"
+  },
+  "homepage": "https://github.com/AbdusM/cloudflare-bot-blocker#readme",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

@@ -1,5 +1,9 @@
 # Cloudflare Bot Blocker
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-orange)](https://workers.cloudflare.com/)
+[![GitHub stars](https://img.shields.io/github/stars/AbdusM/cloudflare-bot-blocker?style=social)](https://github.com/AbdusM/cloudflare-bot-blocker)
+
 A lightweight, efficient Cloudflare Worker that blocks unwanted bot traffic before it reaches your origin server. Stops scrapers, AI bots, and malicious traffic from polluting your analytics and consuming server resources.
 
 ## Why Use This?
