@@ -1,37 +1,16 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [1.0.0] - 2025-11-29
+## [v2.0.0] - 2026-01-09
 
 ### Added
-- Initial release
-- Geographic blocking (country-level)
-- ASN blocking (network-level)
-- AI scraper blocking (14+ bots)
-- Rate limiting for JS files
-- JSON logging for all blocks
-- Three example configurations (minimal, standard, strict)
-- Comprehensive documentation
-- Common ASNs reference guide
-- MIT License
+- **Suspicious Country Throttling (Layer 5):**
+  - Added ability to rate-limit specific countries (e.g., those with high bot/VPN traffic) instead of blocking them entirely.
+  - Useful for mitigating traffic from regions where you have legitimate users but also high bot volume.
+  - Default limit: 15 requests/minute.
+- **Cookie Sanitization (Layer 6):**
+  - Added logic to strip specific sensitive cookies from incoming requests before they reach the origin.
+  - Helps prevent session hijacking and reduces attack surface.
 
-### Features
-- Multi-layer bot protection
-- Zero dependencies
-- <1ms execution time
-- Works on Cloudflare free tier
-- Production-ready code
-- Real-time monitoring via Wrangler
-
-### Documentation
-- Complete setup guide
-- Monitoring examples
-- Troubleshooting section
-- Contributing guidelines
-- Issue/PR templates
-
-[1.0.0]: https://github.com/AbdusM/cloudflare-bot-blocker/releases/tag/v1.0.0
+### Changed
+- Refactored rate limiting logic to be more modular.
+- Updated user-agent matching to be case-insensitive for better accuracy.
