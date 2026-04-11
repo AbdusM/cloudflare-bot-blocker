@@ -1,0 +1,38 @@
+{
+  "name": "cloudflare-bot-blocker",
+  "version": "2.0.0",
+  "description": "Configurable Cloudflare Worker for monitoring and blocking bot traffic with stateful rate limiting",
+  "type": "module",
+  "main": "worker.js",
+  "scripts": {
+    "test": "node --test --test-concurrency=1",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "tail": "wrangler tail"
+  },
+  "keywords": [
+    "cloudflare",
+    "cloudflare-workers",
+    "bot-protection",
+    "web-security",
+    "ddos-protection",
+    "ai-scrapers",
+    "analytics",
+    "rate-limiting",
+    "geo-blocking",
+    "asn-blocking"
+  ],
+  "author": "Abdus Muwwakkil",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AbdusM/cloudflare-bot-blocker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AbdusM/cloudflare-bot-blocker/issues"
+  },
+  "homepage": "https://github.com/AbdusM/cloudflare-bot-blocker#readme",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
