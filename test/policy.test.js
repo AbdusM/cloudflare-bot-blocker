@@ -441,3 +441,53 @@ test("durable object rate limiter enforces limits and resets windows", async () 
     retryAfter: 0,
   })
 })
+
+test("native ratelimit client bridges Cloudflare native rate limiting", async () => {
+  const mockBinding = {
+    async limit({ key }) {
+      return { success: key !== "blocked-ip" }
+    },
+  }
+
+  const { NativeRateLimiterClient } = await import("../src/rate-limiter.js")
+  const client = new NativeRateLimiterClient(mockBinding)
+
+  const allowed = await client.consume({ key: "good-ip", windowMs: 60000 })
+  assert.equal(allowed.limited, false)
+  assert.equal(allowed.retryAfter, 0)
+
+  const blocked = await client.consume({ key: "blocked-ip", windowMs: 60000 })
+  assert.equal(blocked.limited, true)
+  assert.equal(blocked.retryAfter, 60)
+})
+
+test("durable object rate limiter client routes to bounded shard names", async () => {
+  const accessedShards = new Set()
+  const mockNamespace = {
+    idFromName(name) {
+      accessedShards.add(name)
+      return { id: name }
+    },
+    get() {
+      return {
+        async fetch() {
+          return Response.json({ limited: false, remaining: 10, resetAt: Date.now() + 60000, retryAfter: 0 })
+        },
+      }
+    },
+  }
+
+  const { DurableObjectRateLimiterClient } = await import("../src/rate-limiter.js")
+  const client = new DurableObjectRateLimiterClient(mockNamespace, 16)
+
+  for (let i = 0; i < 100; i += 1) {
+    await client.consume({ key: `ip-${i}.${i}.${i}.${i}`, limit: 10, windowMs: 60000 })
+  }
+
+  // All 100 IPs must be mapped into at most 16 bounded shard objects (shard_0 .. shard_15)
+  assert.ok(accessedShards.size <= 16)
+  for (const shard of accessedShards) {
+    assert.match(shard, /^shard_\d+$/)
+  }
+})
+
